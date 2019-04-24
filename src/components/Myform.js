@@ -1,3 +1,4 @@
+/*
 import React, {Component} from 'react';
 import Myinput from './Myinput'
 
@@ -9,12 +10,13 @@ class Myform extends Component {
             email: '',
             pass: '',
             spass: '',
-            formErrors: {email: '', password: '', login: ''},
+            //formErrors: {email: '', pass: '', login: '', spass: '', passMatch: ''},
             emailValid: false,
-            passwordValid: false,
+            passValid: false,
+            spassValid: false,
             formValid: false,
             loginValid: false,
-            spasswordValid: false
+
         };
 
         this.onInputChange = this.onInputChange.bind(this);
@@ -22,33 +24,32 @@ class Myform extends Component {
 
     }
 
-    /*   validator = {
+    /!*   validator = {
            login: '',
            email: '',
            pass: '',
            spass: '',
-       };*/
+       };*!/
 
 
     onSubmit = event => {
         // alert(`${event.target}, добро пожаловать!`);
         // console.log('onSubmit->', event.target.value, event.target.name);
         event.preventDefault();
-      /*  const data = new FormData(event.target);
-        console.log('onSubmit data ->', data);*/
-      if ( this.state.emailValid &&
-          this.state.passwordValid &&
-          this.state.loginValid &&
-          this.state.spasswordValid) {
-          this.setState( {formValid: true});
-          console.log('onSubmit FORM NOT VALID )) ->', this.state);
-      }else console.log('onSubmit FORM NOT VALID (( ->', this.state);
-
+        /!*  const data = new FormData(event.target);
+          console.log('onSubmit data ->', data);*!/
+        if (this.state.emailValid &&
+            this.state.passwordValid &&
+            this.state.loginValid &&
+            this.state.spasswordValid) {
+            this.setState({formValid: true});
+            console.log('onSubmit FORM NOT VALID )) ->', this.state);
+        } else console.log('onSubmit FORM NOT VALID (( ->', this.state);
 
 
     }
 
-    /*  onInputChange = event => {
+    /!*  onInputChange = event => {
           console.log('onSubmit->', event.target.name, '-- value--> ', event.target.value);
           this.setState({[event.target.name]: event.target.value});
           console.log('onSubmit state ->', this.state[event.target.name]);
@@ -56,7 +57,7 @@ class Myform extends Component {
               case login : this.validator.login =
           }
 
-      }*/
+      }*!/
     onInputChange(e) {
         const name = e.target.name;
         const value = e.target.value;
@@ -67,17 +68,18 @@ class Myform extends Component {
         console.log('onInputChange ->', this.state);
     }
 
-    passwordValidator = (pass1, pass2) =>  {
-        console.log('123 == pass1 == pass2 -->', 123 == pass1 == pass2 );
-        return  123 == pass1 == pass2};
+    passwordValidator = (pass1, pass2) => {
+        console.log('123 == pass1 == pass2 -->', 123 == pass1 == pass2);
+        return 123 == pass1 == pass2
+    };
 
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
         let emailValid = this.state.emailValid;
-        let passwordValid = this.state.passwordValid;
+        let passdValid = this.state.passwordValid;
+        let spassdValid = this.state.spassValid;
         let loginValid = this.state.loginValid;
-        let spasswordValid = this.state.spasswordValid;
         switch (fieldName) {
             case 'login':
                 loginValid = value == 'admin';
@@ -88,14 +90,9 @@ class Myform extends Component {
                 fieldValidationErrors.email = emailValid ? '' : ' is invalid';
                 break;
             case 'pass':
-                passwordValid = this.passwordValidator(value, this.state.spass);
-
-                fieldValidationErrors.password = passwordValid ? '' : 'passwords do not match. please try again';
-                console.log('validateField pass->', passwordValid, this.state.formErrors);
-                break;
             case 'spass':
-                spasswordValid = this.passwordValidator(value, this.state.pass);
-                fieldValidationErrors.password = passwordValid ? '' : 'passwords do not match. please try again';
+                Valid = value.length > 0 ;
+                fieldValidationErrors[fieldName] = passwordValid ? '' : 'passwords do not match. please try again';
                 console.log('validateField pass->', passwordValid, this.state.formErrors);
                 break;
             default:
@@ -170,4 +167,4 @@ class Myform extends Component {
     }
 }
 
-export default Myform;
+export default Myform;*/

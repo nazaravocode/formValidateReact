@@ -6,11 +6,11 @@ class Myinput extends Component {
     }
 
     render() {
-        const {labelText, type, name,eventHandler,inpValue} = this.props;
+        const {labelText, type, eventHandler, name, inpValue, errorValidate } = this.props;
         return (
             <div className="form-group">
-                    <label htmlFor="exampleFormControlInput1">{labelText}</label>
-                    <input type={type} className="form-control" name={name}
+                    <label className={`${errorValidate ? 'text-danger' : 'text-success'}`} >{labelText}</label>
+                    <input type={type} className={`form-control ${errorValidate ? 'is-invalid' : ''}`} name={name}
                            onChange={eventHandler}
                            value={inpValue}/>
                 </div>
