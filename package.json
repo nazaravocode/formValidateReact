@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "nyc": "^14.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
@@ -12,7 +15,8 @@
     "start": "PORT=3500 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:unit": "mocha --require @babel/register --require ./test/helpers.js --require ./test/dom.js 'src/**/*.spec.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +32,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jsdom": "^15.0.0",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2"
   }
 }
