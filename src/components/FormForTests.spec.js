@@ -9,7 +9,17 @@ describe('test FormForTests', () => {
     const input1 = component.find('input').at(0);
     const input2 = component.find('input').at(1);
 
-    it('should call onChange with shallow second input', () => {
+    test('test input ', () => {
+        const form = shallow(<FormForTests/>);
+        form.find('input[name="login"]')
+            .at(0)
+            .simulate("change", {target : {value : "aaa" }});
+        const input =   form.find('input[name="login"]');
+        console.log(input.props());
+        expect(input.props().value).toEqual('aaa');
+    });
+
+   /* it('should call onChange with shallow second input', () => {
         const event = {
             target: {
                 name: 'password',
@@ -22,7 +32,7 @@ describe('test FormForTests', () => {
         //console.log('input1 simulate', input2.props());
        // console.log('onChange onChange', onChange);
         expect(input2.props().value).toEqual('123');
-    });
+    });*/
 
 
 /*    it('test input  init value', () => {
