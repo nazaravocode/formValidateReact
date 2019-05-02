@@ -13,10 +13,11 @@ describe('test FormForTests', () => {
         const form = shallow(<FormForTests/>);
         form.find('input[name="login"]')
             .at(0)
-            .simulate("change", {target : {value : "aaa" }});
+            .simulate("change", {target : {value : "admin" }});
         const input =   form.find('input[name="login"]');
+        form.update();
         console.log(input.props());
-        expect(input.props().value).toEqual('aaa');
+        expect(input.props().value).toEqual('admin');
     });
 
    /* it('should call onChange with shallow second input', () => {

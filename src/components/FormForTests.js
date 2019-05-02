@@ -21,19 +21,17 @@ class FormForTests extends Component {
     }
     onLoginChange(e) {
         this.setState({
-            ...this.state,
             login: e.target.value,
             loginOk : e.target.value === 'admin'
-        }, () => console.log('onLoginChange ->',this.state));
+        });
 
     }
 
     onPasswordChange(e) {
         this.setState({
-            ...this.state,
             password: e.target.value,
             passOk : e.target.value === '123'
-        }, () => console.log('onPasswordChange ->',this.state));
+        });
     }
 
     render() {

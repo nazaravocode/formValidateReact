@@ -1,20 +1,21 @@
-// import React from 'react';
-// import './App.css';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import FormForTests from './components/FormForTests';
-//
-// function App() {
-//   return (
-//     <div className="container"
-//     style={{'marginTop':40}}>
-//       <FormForTests/>
-//     </div>
-//   );
-// }
-//
-// export default App;
+import React from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import FormStyledComp from './components/formComponent/FormStyledComp';
+
+function App() {
+  return (
+    <div className="container"
+    style={{'marginTop':40}}>
+      <FormStyledComp/>
+    </div>
+  );
+}
+
+export default App;
 
 
+/*
 import React, { Component } from 'react';
 
 export const doIncrement = (prevState) => ({ counter: prevState.counter + 1,});
@@ -66,4 +67,4 @@ class App extends Component {
     }
 }
 export const Counter = ({counter}) => <p>{counter}</p>;
-export default App;
+export default App;*/
