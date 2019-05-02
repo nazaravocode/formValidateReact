@@ -1,6 +1,4 @@
-
-
-const validator = (name, password) => {
+export const validator = (name, password) => {
     let validName = false,
         validPassword = false;
     if (name === 'admin') {
