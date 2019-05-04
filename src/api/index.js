@@ -1,15 +1,14 @@
 import axios from 'axios';
 
 export function getArticles(url) {
-    let articles = [] ;
+    let articles = [];
     axios.get(url)
-        .then(response =>
-            articles.push(response.data)
+        .then(response =>  response.data.map((i) => {
+            return  articles.push(i)})
         )
         .catch((e) => {
             console.error(e)
         });
-     console.log('response data->', articles);
-
-    return articles[0];
+     console.log('getArticles articles ->', articles);
+     return articles;
 }
